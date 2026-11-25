@@ -1,0 +1,910 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbg{
+    background-color: #0f172a;
+    padding: 14px;
+}
+.navbg :hover{
+    color:#38bdf8;
+}
+.navbg a{
+    color:#f8fafc;
+}
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+}
+.navul{
+    display:flex;
+    list-style:none;
+    gap:15px;
+    flex-direction:row;
+
+}
+.hero {
+  background-color: #eef2ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 56px 10%;
+  gap: 32px;
+}
+.intro{
+    background-color:#eef2ff;
+    padding:24px;
+}
+.h1name{
+    color:#2563eb;
+}
+.p{
+    color:#475569;
+}
+.h2intro{
+    color:#0f172a;
+}
+.contact-btn{
+    display:inline-block;
+    color:#ffffff;
+    background-color:#2563eb;
+    padding:10px 22px;
+    border-radius:8px;
+    margin-top:8px
+
+}
+.img-holder{
+    width: 260px;
+    height:260px;
+    border-radius:50%;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #dbeafe;
+    color: #1e3a8a;
+    text-align:center;
+    font-weight:600;
+    padding:16px
+}
+.about{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+    gap:40px;
+    
+}
+.about h2 {
+    margin-bottom: 14px;
+    color: #2c57ba;
+}
+.about p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:15px;
+    max-width:540px;
+    color:#22416d;
+}
+.about-placeholder{
+    height:340px;
+    width:200px;
+    border-radius:14px;
+    background-color: #e2e8f0;
+    color: #334155;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:600;
+    flex-shrink:0
+    
+}
+.skills{
+    background-color:#e2e8f0;
+    padding: 64px 10%;
+}
+.about-skills h2 {
+    color: #2563eb;
+    margin-top: 24px;
+}
+.grid{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top:20px
+}
+.card {
+    background-color: #ffffff;
+    color: #1e3a8a;
+    font-weight: 600;
+    padding: 28px 24px;
+    border-radius: 12px;
+    flex: 1 1 160px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+Conversation with Gemini
+<div class="intro">
+
+<h2 class="h2intro">Hi! I am </h2>
+
+<h1 class="h1name">Prasit Kadam</h1>
+
+<p class="p">First-year B.Tech CSE (AI) student at NIAT(Pune)</p>
+
+</div>
+
+this is what i had written till now
+
+That block is clean and clear, with Hi! I am, Prasit Kadam, and First-year B.Tech CSE (AI) student at NIAT(Pune) lined up in a logical order.   
+Portfolio Wireframe.png
+
+Quick Improvements You Can Make Right Now
+Add the Contact Me link and profile image inside .intro (or right alongside it in your hero section): You still need a Contact Me button/link (<a href="#contact" class="btn">Contact Me</a>) and a profile image (<img src="images/..." alt="Prasit Kadam">) inside the hero section to match the wireframe and checklist.   
+Portfolio Wireframe.png
+
+Give <p class="p"> a more descriptive class name: Using something like <p class="role"> or <p class="hero-desc"> makes your CSS easier to read later than .p.
+
+Add a space in NIAT(Pune): Writing NIAT (Pune) looks a bit cleaner on screen.
+
+Example with the Contact Me Link & Image Added
+HTML
+<div class="intro">
+  <h2 class="h2intro">Hi! I am</h2>
+  <h1 class="h1name">Prasit Kadam</h1>
+  <p class="hero-desc">First-year B.Tech CSE (AI) student at NIAT (Pune)</p>
+  <a href="#contact" class="btn">Contact Me</a>
+  <img src="images/profile.jpg" alt="Prasit Kadam">
+</div>
+If you want your text on the left and your profile image on the right like the wireframe, you can wrap .intro and the <img> inside a parent hero container (<div class="hero-container">) and set display: flex; justify-content: space-between; align-items: center; on it in style.css.   
+Portfolio Wireframe.png
+
+class="hero-desc"
+
+what is this and why is this
+
+class="hero-desc" is an HTML class attribute that gives a custom label (hero-desc, short for hero description) to a specific HTML element—like your <p> line in the hero section—so you can style it in style.css.
+
+Why Use class="hero-desc"?
+Target just that one paragraph: If you write p { ... } in CSS, it affects every <p> tag on your entire website (including paragraphs in About, Projects, and Footer). A class like .hero-desc lets you style only that hero description line.
+
+Clear, readable naming: hero-desc immediately tells you (or anyone reading your code) what that text is for, which is much easier to maintain than a generic class like .p.
+
+Reuse if needed: If another element elsewhere shares the exact same styling, you can reuse class="hero-desc" on it too.
+
+How It Works Together (HTML + CSS)
+In index.html:
+
+HTML
+<p class="hero-desc">First-year B.Tech CSE (AI) student at NIAT (Pune)</p>
+In style.css (notice the dot . before hero-desc—that tells CSS you are selecting a class):
+
+CSS
+.hero-desc {
+  color: #475569;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+You can name the class almost anything you like (such as intro-text or tagline), as long as there are no spaces in the name and it matches .your-class-name in style.css.
+
+which color should i give to the button text and button background
+
+Since your hero area sits on a soft periwinkle tint (#eef2ff) and uses deep slate (#0f172a) with blue/indigo accents, a rich royal blue (#2563eb) or deep indigo (#4f46e5) background paired with crisp white (#ffffff) text works best for your Contact Me button.
+
+Recommended Button Color Pairs
+Royal Blue & White (Best fit with #eef2ff & #0f172a):
+
+Background: #2563eb
+
+Text: #ffffff
+
+Hover background: #1d4ed8 (slightly darker blue so the hover effect is unmistakable)
+
+Deep Indigo & White:
+
+Background: #4f46e5
+
+Text: #ffffff
+
+Hover background: #4338ca
+
+Dark Slate & White (Matches your navbar tone):
+
+Background: #0f172a
+
+Text: #ffffff
+
+Hover background: #1e293b
+
+CSS Example for .btn
+CSS
+.btn {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}
+Using display: inline-block ensures padding and vertical spacing behave cleanly on an <a> tag without overlapping text above or below it.
+
+why is it on mixing
+
+The Contact button is overlapping "First-year B.Tech CSE (AI) student at NIAT(Pune)" because <a> is an inline element by default (display: inline).
+
+When an element is display: inline, CSS ignores top/bottom margin and lets top/bottom padding bleed upward over the line above it instead of pushing the button down.
+
+How to Fix It
+Add display: inline-block; and margin-top to your button class in style.css so its padding respects the text above it and creates clean spacing.
+
+Give your paragraph (First-year B.Tech...) a small margin-bottom (for example, 16px) for extra breathing room.
+
+CSS
+/* Add bottom spacing to your intro line */
+.p {
+  margin-bottom: 16px;
+}
+
+/* Make the button respect vertical spacing & padding */
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+(Replace .btn with whatever class name you gave that [Contact](file:///C:/Users/Prasit%20Kadam/OneDrive/Documents/GitHub/profile-protifile/index.html#contact) link in your HTML.)
+
+Save style.css and refresh the page—the blue button will drop cleanly below the text with zero overlap.
+
+what is the meaning of padding :10px 22px;
+
+means how does the 2values work
+
+padding: 10px 22px; is a CSS shorthand that sets the inner space between your button's text (Contact) and its blue border on all four sides using just two numbers:
+
+First value (10px) → Top & Bottom: Adds 10px of space above and 10px below the text.
+
+Second value (22px) → Left & Right: Adds 22px of space to the left and 22px to the right of the text.
+
+Buttons almost always use a smaller first number and a larger second number so they look comfortably wide like a clickable pill or rectangle instead of a tall square.
+
+Quick Cheat Sheet for padding Shorthands
+1 value (padding: 15px;) → All 4 sides get 15px.
+
+2 values (padding: 10px 22px;) → Top/Bottom = 10px, Left/Right = 22px.
+
+4 values (padding: 10px 22px 10px 22px;) → Clockwise starting from the top: Top → Right → Bottom → Left.
+
+now how to put image or mine
+
+To put your photo in your hero section, save the image inside an images folder inside your project folder and link it using an <img> tag with a clear alt attribute.
+
+Step 1: Put Your Photo in the Right Folder
+Create a folder named images inside your portfolio folder (the same folder that has index.html and style.css).
+
+Move your chosen photo into that images folder and give it a simple, lowercase filename with no spaces—for example, profile.jpg (so the path is images/profile.jpg).
+
+Step 2: Add the <img> Tag in index.html
+Place the <img> inside your hero container next to your text block so you can position them side by side with Flexbox:
+
+HTML
+<section id="home">
+  <div class="hero-container">
+    <div class="intro">
+      <h2 class="h2intro">Hi! I am</h2>
+      <h1 class="h1name">Prasit Kadam</h1>
+      <p class="hero-desc">First-year B.Tech CSE (AI) student at NIAT (Pune)</p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/profile.jpg" alt="Prasit Kadam portrait">
+    </div>
+  </div>
+</section>
+Step 3: Style the Layout and Image in style.css
+Use Flexbox on .hero-container to put the text on the left and the photo on the right, and set width, height, and object-fit: cover on the image so it stays crisp and does not stretch:
+
+CSS
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-image img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+(Change border-radius: 50%; to border-radius: 16px; if you prefer a rounded square instead of a circle.)
+
+Quick Checklist Before You Refresh
+Exact filename & extension: If your file is actually profile.png or photo.jpeg, make sure src="images/..." matches that exact name and extension.
+
+No spaces in folder/file names: Keep images/profile.jpg simple so links never break.
+
+Mobile stacking: When you add your mobile media query (@media (max-width: 768px)), set .hero-container { flex-direction: column; text-align: center; } so the text and image stack cleanly without horizontal scrolling.
+
+and what if i want to create a blank space for image for now and later want to fill it
+
+To reserve space for your image right now while building the layout, use a placeholder <div> with fixed or responsive dimensions, a subtle background/border, and centered label text—no JavaScript required.
+
+1. HTML Placeholder Inside Your Hero Container
+HTML
+<section id="home">
+  <div class="hero-container">
+    <div class="intro">
+      <h2 class="h2intro">Hi! I am</h2>
+      <h1 class="h1name">Prasit Kadam</h1>
+      <p class="hero-desc">First-year B.Tech CSE (AI) student at NIAT (Pune)</p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+
+    <div class="hero-image">
+      <div class="img-placeholder">Profile Photo</div>
+    </div>
+  </div>
+</section>
+2. CSS Styling for the Placeholder Box
+Use CSS Flexbox inside .img-placeholder to center the label text nicely while holding the exact spot your image will take later:
+
+CSS
+.img-placeholder {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background-color: #dbeafe;
+  border: 2px dashed #2563eb;
+  color: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  padding: 16px;
+}
+(Use border-radius: 16px; instead of 50% if you plan to use a rectangular/rounded-square photo or project thumbnail.)
+
+3. Swapping in the Real Image Later
+When you are ready to drop in a real photo from your images/ folder, replace <div class="img-placeholder">Profile Photo</div> with:
+
+HTML
+<img src="images/profile.jpg" alt="Prasit Kadam" class="profile-img">
+Just remember to replace the placeholder before final submission so every image on the page loads properly.
+
+don't you think that all the things are coming to the left side
+
+Yes—both your hero text (Hi! I am, Prasit Kadam, First-year B.Tech CSE (AI) student at NIAT(Pune), and the Contact button) and your profile photo circle are sitting on the left side instead of sitting side-by-side (text on the left, profile photo circle on the right) and centered within the page.   
+Portfolio Wireframe.png
+
+Why That Happens
+Missing side-by-side flex container: Your text block and the profile photo element are stacking one below another on the left rather than sitting inside a row container with display: flex; justify-content: space-between; align-items: center;.
+
+No centered max-width wrapper: Without a centered container (like max-width: 1100px; margin: 0 auto;) and left/right padding on the section, content hugs the left edge of a wide screen.
+
+How to Fix It in style.css
+Wrap your text block and your profile photo container inside one parent element (for example, <div class="hero-container">) in index.html, and add this to style.css:
+
+CSS
+#home {
+  padding: 56px 32px;
+}
+
+.hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+If you also want the "profile photo" label dead-center inside that light-blue circle, use Flexbox on that circle too:
+
+CSS
+.profile-placeholder {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+Save style.css and refresh Chrome—the text block will sit cleanly on the left, the profile photo circle will sit across from it on the right, and both will stay nicely framed inside the center of the page.
+
+but there is no hero container in my css see
+
+{
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+}
+
+.navbg{
+
+background-color: #0f172a;
+
+padding: 14px;
+
+}
+
+.navbg :hover{
+
+color:#38bdf8;
+
+}
+
+.navbg a{
+
+color:#f8fafc;
+
+}
+
+.nav{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:16px;
+
+}
+
+.navul{
+
+display:flex;
+
+list-style:none;
+
+gap:15px;
+
+flex-direction:row;
+
+
+
+}
+
+.intro{
+
+background-color:#eef2ff;
+
+padding:24px;
+
+}
+
+.h1name{
+
+color:#2563eb;
+
+}
+
+.p{
+
+color:#475569;
+
+}
+
+.h2intro{
+
+color:#0f172a;
+
+}
+
+.contact-btn{
+
+display:inline-block;
+
+color:#ffffff;
+
+background-color:#2563eb;
+
+padding:10px 22px;
+
+border-radius:8px;
+
+margin-top:8px
+
+
+
+}
+
+.img-holder{
+
+width: 260px;
+
+height:260px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content: center;
+
+align-content: center;
+
+background-color: #dbeafe;
+
+color: #1e3a8a;
+
+text-align:center;
+
+font-weight:600;
+
+padding:16px
+
+}
+
+
+
+
+
+That explains why .img-holder is dropping below .intro on the left side! Right now, .intro only wraps your text, and .img-holder sits outside it as a separate block below—with no parent flex container holding them side by side.
+
+Also, notice a small typo in .img-holder: you wrote align-content: center; instead of align-items: center;, which is why "profile photo" is sitting at the top of the circle instead of the middle.
+
+1. Update Your Hero HTML in index.html
+Wrap .intro (your text + button) and .img-holder inside one parent <section id="home" class="hero">:
+
+HTML
+<section id="home" class="hero">
+  <div class="intro">
+    <h2 class="h2intro">Hi! I am</h2>
+    <h1 class="h1name">Prasit Kadam</h1>
+    <p class="p">First-year B.Tech CSE (AI) student at NIAT (Pune)</p>
+    <a href="#contact" class="contact-btn">Contact</a>
+  </div>
+
+  <div class="img-holder">profile photo</div>
+</section>
+2. Update Your CSS in style.css
+Move background-color: #eef2ff; onto .hero so the whole hero section gets the soft lavender background, and use display: flex; justify-content: space-between; align-items: center; on .hero to place .intro on the left and .img-holder on the right:
+
+CSS
+.hero {
+  background-color: #eef2ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 56px 10%;
+  gap: 32px;
+}
+
+.intro {
+  padding: 0;
+}
+
+.h1name {
+  color: #2563eb;
+}
+
+.p {
+  color: #475569;
+  margin: 8px 0 12px;
+}
+
+.h2intro {
+  color: #0f172a;
+}
+
+.contact-btn {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #2563eb;
+  padding: 10px 22px;
+  border-radius: 8px;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.contact-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.img-holder {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dbeafe;
+  color: #1e3a8a;
+  text-align: center;
+  font-weight: 600;
+  padding: 16px;
+  flex-shrink: 0;
+}
+What Changes When You Save & Refresh
+.hero: Gives the entire section the #eef2ff background and pushes the text to the left and the circle to the right with balanced 10% side spacing.
+
+align-items: center; on .img-holder: Moves "profile photo" right into the exact center of the light-blue circle.
+
+text-decoration: none; on .contact-btn: Removes the underline under Contact so it looks like a proper button.
+
+now it's ok now what i have to do
+
+Your hero section is now laid out nicely—text on the left and the profile photo circle on the right. Notice one tiny detail in the circle: "profile photo" is still near the top because .img-holder still has align-content: center; instead of align-items: center;, and your navbar links still say Skill and Project instead of Skills and Projects.   
+Portfolio Wireframe.png
+
+Next, move down the wireframe and build the About Me section right below your hero section.   
+Portfolio Wireframe.png
+
+Step 1: Add the HTML for #about in index.html
+Right after your closing </section> tag for #home, add:
+
+HTML
+<section id="about" class="about">
+  <div class="about-text">
+    <h2>About Me</h2>
+    <p>
+      I am a first-year B.Tech Computer Science and Engineering (AI) student at NIAT, Pune. 
+      I enjoy building responsive websites, learning Python and C++, and exploring how artificial intelligence solves real-world problems.
+    </p>
+  </div>
+
+  <div class="about-img">
+    <div class="about-placeholder">About Photo</div>
+  </div>
+</section>
+Step 2: Style #about in style.css
+Alternate the background to crisp white (#ffffff) so it separates cleanly from your #eef2ff hero section, and use Flexbox to place your bio on the left and the rectangular image box on the right (matching your wireframe):   
+Portfolio Wireframe.png
+
+CSS
+.about {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 10%;
+  gap: 40px;
+}
+
+.about-text h2 {
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.about-text p {
+  color: #475569;
+  line-height: 1.6;
+  max-width: 540px;
+}
+
+.about-placeholder {
+  width: 340px;
+  height: 200px;
+  border-radius: 14px;
+  background-color: #e2e8f0;
+  color: #334155;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+Quick Polish While You're Editing
+Change align-content: center; to align-items: center; inside .img-holder so "profile photo" moves to the vertical center of your hero circle.
+
+Update [Skill](file:///C:/Users/Prasit%20Kadam/OneDrive/Documents/GitHub/profile-protifile/index.html#skill) and [Project](file:///C:/Users/Prasit%20Kadam/OneDrive/Documents/GitHub/profile-protifile/index.html#project) in your navbar to Skills and Projects so they match the wireframe.   
+Portfolio Wireframe.png
+
+Once you save both files and refresh Chrome, let me know how #about looks and we'll move on to the Skills section.
+
+then nothing is required for about-img class
+
+Right now, .about-img is just a wrapper <div> around .about-placeholder, so it doesn't strictly need its own CSS rule if .about-placeholder already sets the size, colors, and centering.
+
+When You Should Add a .about-img Rule
+When swapping in a real <img>: If you replace .about-placeholder with <img src="images/about.jpg" alt="...">, styling .about-img img (with width, height, object-fit: cover, and border-radius) keeps the photo neat and prevents it from overflowing on smaller screens.
+
+If you want extra spacing around the image block: Adding .about-img { flex-shrink: 0; } ensures the image container doesn't squeeze when .about-text has a longer paragraph.
+
+CSS
+.about-img {
+  flex-shrink: 0;
+}
+
+.about-img img {
+  width: 340px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+If you're happy with #about and #skills now, the next step is building the Projects section (#projects) with your two project cards on a clean white background.
+
+<section id="skill" class="skills">
+
+<div class="about-skill">
+
+
+</div>
+
+</section>
+
+
+
+i had written till this one what can i do next
+
+Inside <div class="about-skill">, add your <h2>Skills</h2> heading and a <div class="skills-grid"> wrapper containing at least 5 individual skill cards. Also, rename id="skill" to id="skills" so it matches href="#skills" in your navigation bar.
+
+1. Complete the HTML in index.html
+Replace your current <section id="skill" class="skills"> block with:
+
+HTML
+<section id="skills" class="skills">
+  <div class="about-skill">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">C++</div>
+    </div>
+  </div>
+</section>
+(Make sure your navbar link for Skills also uses href="#skills" so clicking it jumps straight here.)
+
+2. Add the CSS in style.css
+Style .skills with your soft periwinkle background (#eef2ff) to keep the alternating section look, and use Flexbox on .skills-grid so the cards line up cleanly across the row and wrap smoothly on smaller screens:
+
+CSS
+.skills {
+  background-color: #eef2ff;
+  padding: 64px 10%;
+}
+
+.about-skill h2 {
+  color: #0f172a;
+  margin-bottom: 24px;
+}
+
+.skills-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-weight: 600;
+  padding: 28px 24px;
+  border-radius: 12px;
+  flex: 1 1 160px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+.projects {
+  background-color: #ffffff;
+  padding: 64px 10%;
+}
+
+.about-projects h2 {
+  color: #2563eb;
+  margin-bottom: 24px;
+}
+
+.projects-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background-color: #eef2ff;
+  border-radius: 12px;
+  padding: 24px;
+  flex-grow: 1;
+  flex-basis: 280px;
+  box-shadow: 0 4px 10px #cbd5e1;
+}
+
+.project-card h3 {
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.project-link {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+/* Contact Section */
+.contact {
+  background-color: #eef2ff;
+  padding: 64px 10%;
+}
+
+.contact-box h2 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.contact-box p {
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+}
+
+.contact-form input {
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Footer */
+.footer {
+  background-color: #0f172a;
+  color: #f8fafc;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
